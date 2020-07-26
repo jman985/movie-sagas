@@ -9,7 +9,7 @@ class Edit extends Component {
   
   
     componentDidMount(){
-      console.log('edit did mount',this.state.id);
+      console.log('edit did mount')
   
       //dispatch to movies saga
       // this.props.dispatch( {type: 'FETCH_DETAILS'} );

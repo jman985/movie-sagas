@@ -17,15 +17,16 @@ class Details extends Component {
     // this.props.dispatch( {type: 'FETCH_DETAILS'} );
   }
 
-  // getDetails = () => {
-  //   console.log(this.props.match.params.id);
-    
-  //   console.log(this.props.reduxState);
-  // }
+  homeClicked = () => {
+    console.log("back to home Clicked");
+    this.props.history.push('/');
 
-    homeClicked = () => {
+    // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
+  };
+
+    editClicked = () => {
       console.log("back to home Clicked");
-      this.props.history.push('/');
+      this.props.history.push('/edit/:id');
 
       // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
     };
@@ -48,6 +49,8 @@ class Details extends Component {
             </>
           )}
       <button onClick= {this.homeClicked}>Back to Home</button>
+      <button onClick= {this.editClicked}>Edit</button>
+
         </main>
            
       
