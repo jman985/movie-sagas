@@ -6,6 +6,14 @@ import { connect } from 'react-redux';
 class Details extends Component {
 
 
+  componentDidMount(){
+    console.log('home did mount');
+    //dispatch to movies saga
+    this.props.dispatch( {type: 'FETCH_MOVIES'} );
+
+  }
+
+  
     detailsClicked = () => {
       console.log("in detailsClicked");
 
