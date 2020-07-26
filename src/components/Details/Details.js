@@ -8,7 +8,6 @@ class Details extends Component {
 
     detailsClicked = () => {
       console.log("in detailsClicked");
-      this.props.history.push('/details');
 
       // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
     };

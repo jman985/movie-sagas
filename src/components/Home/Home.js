@@ -24,10 +24,7 @@ class Home extends Component {
 //     })
 //   }
 
-  detailsClicked = () =>{
-    console.log('details was clicked');
-    this.props.history.push('/details');
-  };
+ 
 
   render() {
     return (
@@ -42,10 +39,7 @@ class Home extends Component {
           
         </ul>
       </div>
-      <br />
-      <div className = 'details'>
-        <button onClick={this.detailsClicked} id='detailsButton'>Details</button>
-      </div>
+     
 
     </>);
   }
