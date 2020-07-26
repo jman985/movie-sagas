@@ -32,13 +32,25 @@ class Details extends Component {
     render() {
 
       return (
-      
+      <>
         <main >
-            <h1>this is the details page</h1>
+
+          {this.props.reduxState.details.map((movie, index1)=>
+          <>
+          <h1 key={index1}>{movie.title}</h1>
+          <img src={movie.poster} alt= {movie.title} key={index1}/>
+            {movie.genres.map((genre,index2)=>
+              <h3 key={index2}>{genre}</h3>
+              
+            )}
+            <p key={index1}>{movie.description}</p>
+            </>
+          )}
+
         </main>
            
       
-        
+        </>
       );
     }
   }
