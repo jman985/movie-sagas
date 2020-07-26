@@ -5,6 +5,23 @@ import { connect } from 'react-redux';
 
 class Details extends Component {
 
+  state= {
+    id: this.props.reduxState.selectMovie,
+  }
+
+
+  componentDidMount(){
+    console.log('Details did mount',this.state.id);
+    this.props.dispatch( { type: 'FETCH_DETAILS', payload: this.state} );
+    //dispatch to movies saga
+    // this.props.dispatch( {type: 'FETCH_DETAILS'} );
+  }
+
+  getDetails = () => {
+    console.log(this.props.match.params.id);
+    
+    console.log(this.props.reduxState);
+  }
 
     detailsClicked = () => {
       console.log("in detailsClicked");
@@ -13,14 +30,15 @@ class Details extends Component {
     };
   
     render() {
-      return (
-        <>
-        <main >
 
+      return (
+      
+        <main >
             <h1>this is the details page</h1>
         </main>
-         
-        </>
+           
+      
+        
       );
     }
   }

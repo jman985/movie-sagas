@@ -4,10 +4,12 @@ import { Link } from 'react-router-dom';
 
 class Movie extends Component {
 
-  detailsClicked = () => {
-    console.log("in detailsClicked");
 
-    // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
+  movieClicked = () => {
+    console.log("in movie poster for detailsClicked");
+    this.props.dispatch({type: 'SELECT_MOVIE', payload: this.props.thisMovie.id})
+    // this.props.history.push('/details/:' + this.props.thisMovie.id);
+
   };
   
     render() {
@@ -16,8 +18,8 @@ class Movie extends Component {
         <main className = 'poster'>
         <br></br>
 
-        <Link to = "/details">
-          <img src={this.props.thisMovie.poster} onClick = {this.detailsClicked} alt= {this.props.thisMovie.title}/>
+        <Link to = "/details/:id">
+          <img src={this.props.thisMovie.poster} onClick = {this.movieClicked} alt= {this.props.thisMovie.title}/>
           </Link>
 
           <br></br>
