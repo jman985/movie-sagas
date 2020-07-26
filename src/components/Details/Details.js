@@ -17,14 +17,15 @@ class Details extends Component {
     // this.props.dispatch( {type: 'FETCH_DETAILS'} );
   }
 
-  getDetails = () => {
-    console.log(this.props.match.params.id);
+  // getDetails = () => {
+  //   console.log(this.props.match.params.id);
     
-    console.log(this.props.reduxState);
-  }
+  //   console.log(this.props.reduxState);
+  // }
 
-    detailsClicked = () => {
-      console.log("in detailsClicked");
+    homeClicked = () => {
+      console.log("back to home Clicked");
+      this.props.history.push('/');
 
       // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
     };
@@ -46,7 +47,7 @@ class Details extends Component {
             <p key={index1}>{movie.description}</p>
             </>
           )}
-
+      <button onClick= {this.homeClicked}>Back to Home</button>
         </main>
            
       
