@@ -14,9 +14,12 @@ class Movie extends Component {
       return (
         <>
         <main className = 'poster'>
+        <br></br>
+
         <Link to = "/details">
           <img src={this.props.thisMovie.poster} onClick = {this.detailsClicked} alt= {this.props.thisMovie.title}/>
           </Link>
+
           <br></br>
         </main>
          
