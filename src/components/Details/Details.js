@@ -5,15 +5,20 @@ import { connect } from 'react-redux';
 
 class Details extends Component {
 
+  state= {
+    id: this.props.reduxState.selectMovie,
+  }
+
 
   componentDidMount(){
-    console.log('home did mount');
+    console.log('Details did mount',this.state);
+   
     //dispatch to movies saga
-    this.props.dispatch( {type: 'FETCH_MOVIES'} );
+    // this.props.dispatch( {type: 'FETCH_DETAILS'} );
 
   }
 
-  
+
     detailsClicked = () => {
       console.log("in detailsClicked");
 
@@ -26,6 +31,8 @@ class Details extends Component {
         <main >
 
             <h1>this is the details page</h1>
+
+
         </main>
          
         </>

@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('build'));
 
 /** ---------- ROUTES ---------- **/
-app.use('/api/details', detailsRouter);
+app.use('/api/genres', detailsRouter);
 app.use('/api/movies', movieRouter);
 
 /** ---------- START SERVER ---------- **/

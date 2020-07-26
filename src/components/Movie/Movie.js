@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 
 class Movie extends Component {
 
-  detailsClicked = () => {
-    console.log("in detailsClicked");
 
-    // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
+  detailsClicked = () => {
+    console.log("in movie poster for detailsClicked");
+    this.props.dispatch({type: 'SELECT_MOVIE', payload: this.props.thisMovie.id})
+
   };
   
     render() {

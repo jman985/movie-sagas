@@ -9,6 +9,7 @@ class Home extends Component {
     console.log('home did mount');
     //dispatch to movies saga
     this.props.dispatch( {type: 'FETCH_MOVIES'} );
+    this.props.dispatch({type: 'FETCH_GENRES'});
 
   }
 
