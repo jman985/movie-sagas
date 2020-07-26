@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-    pool.query('SELECT * from "pizza";').then((result) => {
+    pool.query('SELECT * from "movies";').then((result) => {
         res.send(result.rows);
     }).catch((error) => {
         console.log('Error GET /movies', error)
