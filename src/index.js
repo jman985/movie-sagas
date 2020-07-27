@@ -18,12 +18,13 @@ import {takeEvery, put} from 'redux-saga/effects';
 function* rootSaga() {
     yield takeEvery('FETCH_MOVIES', getMovieSaga);
     yield takeEvery('FETCH_DETAILS', getDetailsSaga);
-
+    yield takeEvery('SAVE_DETAILS', changeDetailsSaga );
 }
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
 
+//SAGAS
 function* getMovieSaga(){
     try{
 
@@ -33,7 +34,6 @@ function* getMovieSaga(){
         console.log('error with movies get request:', error);
     };//end axios
 }//end getMovieSaga
-
 
 function* getDetailsSaga(action){
     try{
@@ -49,6 +49,20 @@ function* getDetailsSaga(action){
 }//end getGenresSaga
 
 
+// update user input changes
+function* changeDetailsSaga(action) {
+    try{
+        console.log('put query with', action.payload)
+
+      yield axios.put('/details/' + action.payload.id, action.payload);
+      const response = yield axios.get('/details/' + action.payload.id);
+      yield put({type: 'SET_DETAILS', payload: response.data});
+    }catch (error){
+      console.log('Problem changing movies from server', error);
+    }
+  }
+
+//REDUCERS
 // Used to store movies returned from the server
 const movies = (state = [], action) => {
     switch (action.type) {
@@ -69,7 +83,7 @@ const selectMovie = (state = [], action) => {
         }
     }
 
-// Used to store the movie genres
+// Used to store the selected movie details
 const details = (state = [], action) => {
     switch (action.type) {
         case 'SET_DETAILS':
