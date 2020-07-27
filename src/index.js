@@ -52,6 +52,8 @@ function* getDetailsSaga(action){
 // update user input changes
 function* changeDetailsSaga(action) {
     try{
+        console.log('put query with', action.payload)
+
       yield axios.put('/details/' + action.payload.id, action.payload);
       const response = yield axios.get('/details/' + action.payload.id);
       yield put({type: 'SET_DETAILS', payload: response.data});

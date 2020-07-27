@@ -36,13 +36,13 @@ class Edit extends Component {
             description: (this.state.description==='' ? this.props.reduxState.details[0].description : this.state.description),
           }})        
           
-          this.props.history.push('/details/:id');
+          this.props.history.push('/details/' + this.props.match.params.id);
       
       }
 
       cancelClicked = () => {
         console.log('cancel changes clicked');
-        this.props.history.push('/details/:id');
+        this.props.history.push('/details/' + this.props.match.params.id);
       
       }
     

@@ -6,9 +6,9 @@ class Movie extends Component {
 
 
   movieClicked = () => {
-    console.log("in movie poster for detailsClicked");
+    console.log("in movie poster for detailsClicked", this.props.thisMovie.id);
     this.props.dispatch({type: 'SELECT_MOVIE', payload: this.props.thisMovie.id})
-    // this.props.history.push('/details/:' + this.props.thisMovie.id);
+    // this.props.history.push('/details/' + id);
 
   };
   
