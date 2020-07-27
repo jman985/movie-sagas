@@ -11,26 +11,27 @@ class Details extends Component {
 
 
   componentDidMount(){
+    //get details from the database for selected movie
     console.log('Details did mount',this.state.id);
     this.props.dispatch( { type: 'FETCH_DETAILS', payload: this.state} );
-    //dispatch to movies saga
-    // this.props.dispatch( {type: 'FETCH_DETAILS'} );
+    
   }
 
   homeClicked = () => {
+    //go back to home page
     console.log("back to home Clicked");
     this.props.history.push('/');
 
-    // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
   };
 
     editClicked = () => {
+      //go to edit page
       console.log("back to home Clicked");
       this.props.history.push('/edit/:id');
 
-      // this.props.dispatch({type: 'FETCH_DETAILS', payload: this.props.thisMovie.id})
     };
   
+    //render movie details
     render() {
 
       return (

@@ -42,7 +42,7 @@ function* getDetailsSaga(action){
         console.log('querying with', action.payload.id);
         
         const response = yield axios.get ('/details/' + action.payload.id)
-        yield console.log('This is what we get from axios.get: ', response.data);
+        yield console.log('This is what we get from GET details: ', response.data);
 
         yield put ({type: 'SET_DETAILS', payload: response.data});
     } catch (error){

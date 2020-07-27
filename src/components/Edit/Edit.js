@@ -19,6 +19,7 @@ class Edit extends Component {
     }
   
     handleChangeFor = (event, propertyName) => {
+      //handle changes to title, description inputs
         this.setState({
             ...this.state,
             [propertyName]: event.target.value,
