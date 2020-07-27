@@ -2,13 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+
+
 class Movie extends Component {
 
 
   movieClicked = () => {
-    console.log("in movie poster for detailsClicked", this.props.thisMovie.id);
+    console.log("in movie poster for detailsClicked, id is", this.props.thisMovie.id);
+    //dispatch movie id to selectMovie reducer
     this.props.dispatch({type: 'SELECT_MOVIE', payload: this.props.thisMovie.id})
-    // this.props.history.push('/details/' + id);
 
   };
   

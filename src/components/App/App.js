@@ -25,7 +25,6 @@ class App extends Component {
               </span>
               <br></br>
               
-            
           </nav>
           <main>
             <Route exact path="/" component={Home} />

@@ -25,9 +25,10 @@ function* rootSaga() {
 const sagaMiddleware = createSagaMiddleware();
 
 //SAGAS
+
+//get movies from database
 function* getMovieSaga(){
     try{
-
         const response = yield axios.get ('/movies')
         yield put ({type: 'SET_MOVIES', payload: response.data});
     } catch (error){
@@ -35,6 +36,7 @@ function* getMovieSaga(){
     };//end axios
 }//end getMovieSaga
 
+//get details for selected movie
 function* getDetailsSaga(action){
     try{
         console.log('querying with', action.payload.id);
@@ -46,7 +48,7 @@ function* getDetailsSaga(action){
     } catch (error){
         console.log('error with genres get request:', error);
     };//end axios
-}//end getGenresSaga
+}//end getDetailsSaga
 
 
 // update user input changes
@@ -73,7 +75,7 @@ const movies = (state = [], action) => {
     }
 }
 
-// Used to store the movie clicked 
+// Used to store the movie selected for detailed viewing, editing 
 const selectMovie = (state = [], action) => {
         switch (action.type) {
             case 'SELECT_MOVIE':

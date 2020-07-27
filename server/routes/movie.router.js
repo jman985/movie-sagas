@@ -4,7 +4,7 @@ const { default: Axios } = require('axios');
 const { query } = require('../modules/pool');
 const router = express.Router();
 
-
+//get movies list from the database
 router.get('/', (req, res) => {
     pool.query('SELECT * from "movies" ORDER BY id;').then((result) => {
         res.send(result.rows);

@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 class Edit extends Component {
 
+    //set movie id to selected movie
     state = {
         id: this.props.reduxState.selectMovie,
         title : '',
@@ -12,12 +13,9 @@ class Edit extends Component {
         }
     
   
-  
     componentDidMount(){
+      //confirm mount, reduxState
       console.log('edit did mount', this.props.reduxState.details[0].title)
-    //   this.props.dispatch( { type: 'FETCH_DETAILS', payload: this.props.reduxState.selectMovie} );
-      //dispatch to movies saga
-      // this.props.dispatch( {type: 'FETCH_DETAILS'} );
     }
   
     handleChangeFor = (event, propertyName) => {
@@ -30,18 +28,21 @@ class Edit extends Component {
 
     submitChanges = () => {
 
+      // submit/dispatch any title and/or description changes
         this.props.dispatch( { type: 'SAVE_DETAILS', payload: {
             id: this.state.id,
             title: (this.state.title==='' ? this.props.reduxState.details[0].title : this.state.title),
             description: (this.state.description==='' ? this.props.reduxState.details[0].description : this.state.description),
           }})        
-          
+          //go back to details page after submit
           this.props.history.push('/details/' + this.props.match.params.id);
       
       }
 
       cancelClicked = () => {
         console.log('cancel changes clicked');
+
+        //go back to details page on cancel click
         this.props.history.push('/details/' + this.props.match.params.id);
       
       }

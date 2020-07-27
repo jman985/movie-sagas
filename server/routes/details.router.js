@@ -1,15 +1,15 @@
 const express = require('express');
 const pool = require('../modules/pool');
 const { default: Axios } = require('axios');
-// const { query } = require('../modules/pool');
 const router = express.Router();
 
 
 
 router.get('/:id', (req, res) => {
-    console.log('this is the GET req.query.body',req.params.id);
+    console.log('this is the GET req.params.id',req.params.id);
     
-
+    //query for the selected movie, combine genres into a single string
+    //credit to fellow Paxos student Carl Wilcoxon for this complex query
     const queryText = `
     SELECT
       "movies"."title",
@@ -34,15 +34,10 @@ router.get('/:id', (req, res) => {
     });
 })
 
-// save the user's changes to movie title and description
-
-
+//save the user's changes to movie title and description to database
 router.put('/:id', (req, res) => {
-    // return all genres
-    const queryText = `UPDATE movies
-                      SET title=$1,
-                      description=$2
-                      WHERE ID=$3`;
+
+    const queryText = `UPDATE movies SET title=$1, description=$2 WHERE ID=$3`;
     const queryValues = [
       req.body.title,
       req.body.description,
@@ -58,40 +53,7 @@ router.put('/:id', (req, res) => {
         });
   });
 
-
-// router.put('/', async (req, res) => {   
-//     console.log('this is the PUT req.query.body',req.body);
-
-//     const client = await pool.connect();
-//     try {
-//         const {
-//             title,
-//             description,
-//             id
-//         } = req.body;
-//         await client.query('BEGIN');
-        
-//         await client.query
-//         (`UPDATE movies
-//           SET title = $1,
-//               description = $2
-//           WHERE id = $3;`, [ title, description, id ] );
-//         await client.query('COMMIT')
-//         res.sendStatus(201);
-//     } catch (error) {
-//         await client.query('ROLLBACK')
-//         console.log('Error POST /details', error);
-//         res.sendStatus(500);
-//     } finally {
-//         client.release()
-//     }
-// });
-
-// WHERE "movie_id"= $1
-// [req.params.id]
-
-
-
+   
 
 
 
