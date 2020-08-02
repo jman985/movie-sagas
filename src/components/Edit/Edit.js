@@ -54,7 +54,6 @@ class Edit extends Component {
         
             <>
             <main>
-            <h1>Edit Movie Info</h1>
               {this.props.reduxState.details.map((movie, index1)=>
                 <>
 

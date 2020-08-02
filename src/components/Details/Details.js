@@ -49,7 +49,7 @@ class Details extends Component {
             <p key={index1}>{movie.description}</p>
             </>
           )}
-      <button onClick= {this.homeClicked}>Back to Home</button>
+      <button onClick= {this.homeClicked}>Back</button>&nbsp;&nbsp;&nbsp;
       <button onClick= {this.editClicked}>Edit</button>
 
         </main>
