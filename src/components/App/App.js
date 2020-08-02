@@ -5,6 +5,7 @@ import { HashRouter as Router, Route, Link } from "react-router-dom";
 import Home from '../Home/Home';
 import Details from "../Details/Details";
 import Edit from '../Edit/Edit';
+import { Box, Grid, Slide, Paper, Typography} from '@material-ui/core';
 
 
 class App extends Component {
@@ -12,20 +13,25 @@ class App extends Component {
 
 
   render() {
-    return (<>
+    return (
+    <>
       <div className="App">
+      <Router>
         <header className="App-header">
           <h1 className="App-title">Movie Sagas</h1>
-        </header>
+          <br></br>
+          <br></br>
 
-        <Router>
           <nav>
             <span className="linkContainer"> 
-              <Link to="/">Home</Link>
+              <Link color="primary" to="/">Home</Link>
               </span>
-              <br></br>
               
           </nav>
+        </header>
+
+       
+          
           <main>
             <Route exact path="/" component={Home} />
             <Route exact path="/details/:id" component={Details} />
