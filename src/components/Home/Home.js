@@ -22,12 +22,11 @@ class Home extends Component {
       
       <Grid 
       container
-                spacing={2}
-                direction="row"
-                justify="flex-start"
-                alignItems="flex-start"
+      spacing={10}
+      direction="row"
+      justify="flex-start"
+      alignItems="flex-start"
     >
-        
           {this.props.movieList.map(x =>
             <Movie key={x.id} thisMovie={x}/>
           )}

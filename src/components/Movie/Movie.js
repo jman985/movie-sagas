@@ -41,7 +41,7 @@ class Movie extends Component {
         <>
       <Grid item xs={8} sm={4} md={2}>
 
-      <Card width = "300">
+      <Card >
         <CardHeader title={this.props.thisMovie.title}>
         </CardHeader>
       <CardActionArea>
