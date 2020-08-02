@@ -55,8 +55,8 @@ class Movie extends Component {
       <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
           <CardContent>
             <Typography paragraph>{this.props.thisMovie.description}</Typography>
-            <Link to= "/details/:id">
-        <Button onClick = {this.movieClicked} size="small" color="primary">
+            <Link color="inherit" to= "/details/:id">
+        <Button variant="contained" color="primary" onClick = {this.movieClicked} size="small" color="primary">
           Edit Movie
         </Button>
         </Link>
