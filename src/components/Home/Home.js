@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import {connect} from 'react-redux';
 import Movie from '../Movie/Movie';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/styles';
+import { Box, Grid, Slide } from '@material-ui/core';
+
 
 class Home extends Component {
 
@@ -12,20 +16,22 @@ class Home extends Component {
 
 
   render() {
+    const {classes} = this.props;
+
     return (
-    <>
       
-      <div>
-        <ul>
+      <Grid 
+      container
+      spacing={10}
+      direction="row"
+      justify="flex-start"
+      alignItems="flex-start"
+    >
           {this.props.movieList.map(x =>
             <Movie key={x.id} thisMovie={x}/>
           )}
-          
-        </ul>
-      </div>
-     
-
-    </>);
+    </Grid>
+    );
   }
 }
 const putReduxStateOnProps =(reduxState)=>({

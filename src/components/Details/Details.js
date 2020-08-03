@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 
 
 
@@ -49,8 +50,8 @@ class Details extends Component {
             <p key={index1}>{movie.description}</p>
             </>
           )}
-      <button onClick= {this.homeClicked}>Back to Home</button>
-      <button onClick= {this.editClicked}>Edit</button>
+      <Button variant="contained" color="secondary" onClick= {this.homeClicked}>Back</Button>&nbsp;&nbsp;&nbsp;
+      <Button variant="contained" color="primary" onClick= {this.editClicked}>Edit</Button>
 
         </main>
            
