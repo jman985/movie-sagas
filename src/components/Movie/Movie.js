@@ -16,6 +16,8 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import IconButton from '@material-ui/core/IconButton';
+// import { MDBContainer, MDBCol, MDBRow, MDBCard, MDBCardUp, MDBCardBody, MDBAvatar, MDBRotatingCard, MDBIcon } from "mdbreact";
+import { MDBCard, MDBCardTitle, MDBBtn, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 
 // import router from '../../../public/images/'
 
@@ -29,11 +31,18 @@ class Movie extends Component {
 
   };
 
-  state = { expanded: false };
+  state = { expanded: false,
+        flipped: false
+  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
+
+  handleFlipping = id => () => {
+    const cardId = `flipped${id}`;
+    this.setState({ [cardId]: !this.state[cardId] });
+  }
 
     render() {
 
@@ -44,31 +53,33 @@ class Movie extends Component {
       <Card >
         <CardHeader title={this.props.thisMovie.title}>
         </CardHeader>
-      <CardActionArea>
-        <CardMedia  component="img" onClick={this.handleExpandClick} aria-expanded={this.state.expanded}
+        <CardActionArea>
+          <CardMedia  component="img" onClick={this.handleExpandClick} aria-expanded={this.state.expanded}
             aria-label="Show more"
-          alt={this.props.thisMovie.title}
-          src={this.props.thisMovie.poster}
-          title={this.props.thisMovie.title}
-        />
+            alt={this.props.thisMovie.title}
+            src={this.props.thisMovie.poster}
+            title={this.props.thisMovie.title}
+          />
         </CardActionArea>
-      <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-          <CardContent>
-            <Typography paragraph>{this.props.thisMovie.description}</Typography>
-            <Link color="inherit" to= "/details/:id">
-        <Button variant="contained" color="primary" onClick = {this.movieClicked} size="small" color="primary">
-          Edit Movie
-        </Button>
-        </Link>
-          </CardContent>
-        </Collapse>
-        </Card>
+          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+            <CardContent>
+              <Typography paragraph>{this.props.thisMovie.description}</Typography>
+              <Link color="inherit" to= "/details/:id">
+                <Button variant="contained" color="primary" onClick = {this.movieClicked} size="small" color="primary">
+                Edit Movie
+                </Button>
+              </Link>
+            </CardContent>
+          </Collapse>
+          </Card>
         </Grid>
                 </>
       );
     }
   }
   
+
+
   const putReduxStateOnProps =(reduxState)=>({
     reduxState
   })

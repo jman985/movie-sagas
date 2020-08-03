@@ -9,6 +9,9 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 import axios from 'axios'; 
 // end imports
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import 'bootstrap-css-only/css/bootstrap.min.css';
+import 'mdbreact/dist/css/mdb.css';
 
 // Import saga middleware
 import createSagaMiddleware from 'redux-saga';
