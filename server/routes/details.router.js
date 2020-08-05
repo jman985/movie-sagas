@@ -10,21 +10,8 @@ router.get('/:id', (req, res) => {
     
     //query for the selected movie, combine genres into a single string
     //credit to fellow Paxos student Carl Wilcoxon for this complex query
-    const queryText = `
-    SELECT
-      "movies"."title",
-      "movies"."poster",
-      "movies"."description",
-      ARRAY_AGG("name") "genres"
-    FROM "movies"
-    JOIN "movie_genres" ON "movie_id" = "movies"."id"
-    JOIN "genres" ON "genre_id" = "genres"."id"
-    WHERE "movies"."id" = ${req.params.id}
-    GROUP BY "movies"."id"
-    ORDER BY "movies"."title" ASC`;
+    pool.query('SELECT "movies"."title","movies"."poster","movies"."description",ARRAY_AGG("name") "genres" FROM "movies" JOIN "movie_genres" ON "movie_id" = "movies"."id" JOIN "genres" ON "genre_id" = "genres"."id" WHERE "movies"."id" = $1 GROUP BY "movies"."id" ORDER BY "movies"."title" ASC;',[req.params.id])
 
-    pool.query(queryText)
-    
     .then((result) => {
         res.send(result.rows);
 

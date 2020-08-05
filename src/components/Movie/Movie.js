@@ -16,10 +16,8 @@ import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import IconButton from '@material-ui/core/IconButton';
-// import { MDBContainer, MDBCol, MDBRow, MDBCard, MDBCardUp, MDBCardBody, MDBAvatar, MDBRotatingCard, MDBIcon } from "mdbreact";
-import { MDBCard, MDBCardTitle, MDBBtn, MDBRow, MDBCol, MDBIcon } from 'mdbreact';
 
-// import router from '../../../public/images/'
+
 
 class Movie extends Component {
 
@@ -38,11 +36,7 @@ class Movie extends Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
-
-  handleFlipping = id => () => {
-    const cardId = `flipped${id}`;
-    this.setState({ [cardId]: !this.state[cardId] });
-  }
+  
 
     render() {
 
@@ -66,7 +60,7 @@ class Movie extends Component {
               <Typography paragraph>{this.props.thisMovie.description}</Typography>
               <Link color="inherit" to= "/details/:id">
                 <Button variant="contained" color="primary" onClick = {this.movieClicked} size="small" color="primary">
-                Edit Movie
+                Select Movie
                 </Button>
               </Link>
             </CardContent>
