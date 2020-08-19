@@ -1,4 +1,4 @@
-# PROJECT NAME
+# Movies with React-Redux and Sagas
 
 ## Description
 
