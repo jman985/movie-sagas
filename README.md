@@ -21,6 +21,7 @@ This application seeks to offer the user access to a database of popular movies.
 - [Node.js](https://nodejs.org/en/)
 - SQL database (postgreSQL recommended)
 
+
 ## Installation
 
 1. Create a database named `your database name`,
@@ -30,14 +31,15 @@ This application seeks to offer the user access to a database of popular movies.
 5. Run `npm run client` in your terminal
 6. The `npm run client` command will open up a new browser tab for you!
 
+
 ## Usage
 
 1. At the movie list (home) page, click on a movie to view the description.
 2. Click the "SELECT MOVIE" button at the bottom of the description to view the movie details.
 3. On the details view, click 'BACK' to go back the home page, or "EDIT" to move to the edit view.
-4. On the edit view, type in any desired changes to to the title or description.
-5. when satisfied click 'save changes' to be redirected to the updated details view.
-6. to exit back to details view without saving changes, click 'cancel'.
+4. On the edit view, type in any desired changes in the title and/or description text input box(es).
+5. Click "Submit Changes" to be redirected to the details view and see the changes.
+6. Click "Cancel" to go back to the details view without saving changes.
 
 
 ## Built With
