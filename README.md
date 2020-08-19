@@ -31,7 +31,6 @@ This application seeks to offer the user access to a database of popular movies.
 6. The `npm run client` command will open up a new browser tab for you!
 
 ## Usage
-How does someone use this application? Tell a user story here.
 
 1. At the movie list (home) page, click on a movie to view the description.
 2. Click the "SELECT MOVIE" button at the bottom of the description to view the movie details.
