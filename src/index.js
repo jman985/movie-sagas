@@ -42,9 +42,9 @@ function* getMovieSaga(){
 //get details for selected movie
 function* getDetailsSaga(action){
     try{
-        console.log('querying with', action.payload.id);
+        console.log('querying with', action.payload);
         
-        const response = yield axios.get ('/details/' + action.payload.id)
+        const response = yield axios.get ('/details/' + action.payload)
         yield console.log('This is what we get from GET details: ', response.data);
 
         yield put ({type: 'SET_DETAILS', payload: response.data});

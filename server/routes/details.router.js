@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 router.get('/:id', (req, res) => {
-    console.log('this is the GET req.params.id',req.params.id);
+    console.log('this is the GET req.params',req.params.id);
     
     //query for the selected movie, combine genres into a single string
     //credit to fellow Paxos student Carl Wilcoxon for this complex query

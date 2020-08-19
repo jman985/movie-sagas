@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { Box, Grid, Slide, Paper, Typography} from '@material-ui/core';
 import { withStyles } from '@material-ui/styles';
 import { makeStyles } from '@material-ui/core/styles';
@@ -26,6 +26,7 @@ class Movie extends Component {
     console.log("in movie poster for detailsClicked, id is", this.props.thisMovie.id);
     //dispatch movie id to selectMovie reducer
     this.props.dispatch({type: 'SELECT_MOVIE', payload: this.props.thisMovie.id})
+    this.props.history.push('/details/' + this.props.thisMovie.id);
 
   };
 
@@ -58,11 +59,9 @@ class Movie extends Component {
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
               <Typography paragraph>{this.props.thisMovie.description}</Typography>
-              <Link color="inherit" to= "/details/:id">
                 <Button variant="contained" color="primary" onClick = {this.movieClicked} size="small" color="primary">
                 Select Movie
                 </Button>
-              </Link>
             </CardContent>
           </Collapse>
           </Card>
@@ -78,4 +77,4 @@ class Movie extends Component {
     reduxState
   })
   
-  export default connect(putReduxStateOnProps)(Movie);
+  export default connect(putReduxStateOnProps)(withRouter(Movie));

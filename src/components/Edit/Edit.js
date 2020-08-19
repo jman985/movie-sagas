@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -7,7 +8,7 @@ class Edit extends Component {
 
     //set movie id to selected movie
     state = {
-        id: this.props.reduxState.selectMovie,
+        id: this.props.match.params.id,
         title : '',
         description : ''
         }
@@ -15,7 +16,7 @@ class Edit extends Component {
   
     componentDidMount(){
       //confirm mount, reduxState
-      console.log('edit did mount', this.props.reduxState.details[0].title)
+      this.props.dispatch( { type: 'FETCH_DETAILS', payload: this.props.match.params.id} );
     }
   
     handleChangeFor = (event, propertyName) => {
@@ -64,7 +65,7 @@ class Edit extends Component {
                 <br></br>
                 <br></br>
                 <img src={movie.poster} alt= {movie.title} key={index1}/>
-                <p key={index1}>{movie.description}</p>
+                <p style={{margin: 'auto'}} key={index1}>{movie.description}</p>
                 </>
 
              )}
@@ -91,4 +92,4 @@ class Edit extends Component {
       reduxState
     })
     
-    export default connect(putReduxStateOnProps)(Edit);
+    export default connect(putReduxStateOnProps)(withRouter(Edit));

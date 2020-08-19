@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from 'react-router-dom';
 import {connect} from 'react-redux';
 import Movie from '../Movie/Movie';
 import PropTypes from 'prop-types';
@@ -37,4 +38,4 @@ class Home extends Component {
 const putReduxStateOnProps =(reduxState)=>({
   movieList: reduxState.movies
 })
-export default connect(putReduxStateOnProps)(Home);
+export default connect(putReduxStateOnProps)(withRouter(Home));

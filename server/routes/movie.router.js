@@ -6,7 +6,7 @@ const router = express.Router();
 
 //get movies list from the database
 router.get('/', (req, res) => {
-    pool.query('SELECT * from "movies" ORDER BY id;').then((result) => {
+    pool.query('SELECT * FROM "movies" ORDER BY id;').then((result) => {
         res.send(result.rows);
     }).catch((error) => {
         console.log('Error GET /movies', error)

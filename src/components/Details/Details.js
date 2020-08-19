@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
+import { withRouter } from 'react-router-dom';
 
 
 
@@ -13,8 +14,8 @@ class Details extends Component {
 
   componentDidMount(){
     //get details from the database for selected movie
-    console.log('Details did mount',this.state.id);
-    this.props.dispatch( { type: 'FETCH_DETAILS', payload: this.state} );
+    console.log('Details did mount',this.props.match.params.id);
+    this.props.dispatch( { type: 'FETCH_DETAILS', payload: this.props.match.params.id} );
     
   }
 
@@ -28,7 +29,7 @@ class Details extends Component {
     editClicked = () => {
       //go to edit page
       console.log("back to home Clicked");
-      this.props.history.push('/edit/:id');
+      this.props.history.push('/edit/' + this.props.match.params.id);
 
     };
   
@@ -65,4 +66,4 @@ class Details extends Component {
     reduxState
   })
   
-  export default connect(putReduxStateOnProps)(Details);
+  export default connect(putReduxStateOnProps)(withRouter(Details));
