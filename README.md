@@ -10,7 +10,7 @@ This application seeks to offer the user access to a database of popular movies.
 ## Screen Shots
 
 ### Movie List View:
-![Movie List View] (/public/images/list.view.png)
+![Movie List View] (/public/images/list.view.png?raw=true "Optional Title")
 
 ### Edit Movie View:
 ![Edit Movie View] (/public/images/edit.view.png)
