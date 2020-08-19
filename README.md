@@ -12,21 +12,16 @@ This application seeks to offer the user access to a database of popular movies.
 ### Movie List View:
 ![Movie List View](/public/images/listView.png)
 
+
 ### Edit Movie View:
 ![Edit Movie View](/public/images/editView.png)
 
 ### Prerequisites
 
-Link to software that is required to install the app (e.g. node).
-
 - [Node.js](https://nodejs.org/en/)
-- SQL database (postgreSQL reccommended)
+- SQL database (postgreSQL recommended)
 
 ## Installation
-
-How do you get your application up and running? This is a step by step list for how another developer could get this project up and running. The good target audience in terms of knowledge, would be a fellow Primer from another cohort being able to spin up this project. Note that you do not need a paragraph here to intro Installation. It should be step-by-step.
-
-If your application has secret keys (for example --  Twilio), make sure you tell them how to set that up, both in getting the key and then what to call it in the `.env` file.
 
 1. Create a database named `your database name`,
 2. The queries in the `tables.sql` file are set up to create all the necessary tables and populate the needed data to allow the application to run correctly. The project is built on [Postgres](https://www.postgresql.org/download/), so you will need to make sure to have that installed. We recommend using Postico to run those queries as that was used to create the queries, 
@@ -38,25 +33,24 @@ If your application has secret keys (for example --  Twilio), make sure you tell
 ## Usage
 How does someone use this application? Tell a user story here.
 
-1. xxx
-2. xxx
-3. xxx
-4. xxx
-5. xxx
-6. xxx
+1. At the movie list (home) page, click on a movie to view the description.
+2. Click the "SELECT MOVIE" button at the bottom of the description to view the movie details.
+3. On the details view, click 'BACK' to go back the home page, or "EDIT" to move to the edit view.
+4. On the edit view, type in any desired changes to to the title or description.
+5. when satisfied click 'save changes' to be redirected to the updated details view.
+6. to exit back to details view without saving changes, click 'cancel'.
 
 
 ## Built With
 
-List technologies and frameworks here
+- React
+- Redux
+- Redux-Sagas 
+- PostgreSQL
+- Node
+- Express
+- React-Router-Dom
 
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-_Note, include this only if you have a license file. GitHub will generate one for you if you want!_
 
 ## Acknowledgement
-Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality. (Thank your people)
-
-## Support
-If you have suggestions or issues, please email me at [youremail@whatever.com](www.google.com)
+Thanks to [Prime Digital Academy](www.primeacademy.io) who equipped and helped me to make this application a reality.  Special thanks to the Paxos instructors and the entire Paxos cohort.
