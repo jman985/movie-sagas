@@ -6,7 +6,7 @@ _Duration: 2-Day Sprint_
 
 This application seeks to offer the user access to a database of popular movies.  Upon clicking a movie, a dropdown tab is shown containing a description of the movie's plot, along with a "Select Movie" button.  Upon clicking this button, the user is taken to a detailed view of the selected movie's title, poster, description, and respective genre(s).  From this page the user has the ability to click "Cancel", which takes them back to list of movies, or "Edit" which takes them to a page where they can edit the movie's title and/or description.
 
-To see the fully functional site, please see [Movies with React-Redux and Sagas](https://guarded-atoll-84100.herokuapp.com/#/)
+To see the fully functional site, please visit [Movies with React-Redux and Sagas](https://guarded-atoll-84100.herokuapp.com/#/)
 
 ## Screen Shots
 
